@@ -1,3 +1,2 @@
 # pyLMIE
-LMIE: LMfit Inversion in a Milne-Eddignton atmosphere
-
+LMpyMilne: LMfit Inversion in a Milne-Eddignton atmosphere (in python)
