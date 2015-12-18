@@ -94,7 +94,7 @@ if __name__ == "__main__":
     # hdu = pf.open('/scratch/carlos/datos_gregor/17jun14.006-01ccmnfn.fits')
     # datos = hdu[0].data
     # y2 = datos[74,:,274,24:304]
-    y2 = load('stoke3.npy')
+    y2 = load('stoke2.npy')
     #y2 = datos[87,:,184,24:304]
     #y2 = datos[59,:,430,24:304]
     x = arange(-2.8,2.8,20e-3)
@@ -189,77 +189,7 @@ if __name__ == "__main__":
         plt.plot(x,stokes[i],'k-',alpha =0.8)
         plt.plot(x,synthetic[i],'r-')
         #plt.plot([0,0],[min(stokes[i]),max(stokes[i])],'k--')
-    plt.tight_layout()
+    # plt.tight_layout()
     plt.show()
+    # plt.savefig('prueba2.pdf')
 
-
-
-
-
-
-
-
-    # ----------------------------------------------------
-    # Element = SI1
-    # lambda0 = 10827.089
-    # ju=2.0, lu=1, su=1
-    # jl=2.0, ll=1, sl=1
-    # g_u  = 1.5
-    # g_l  = 1.5
-    # geff = 1.5
-    # ----------------------------------------------------
-    #  B     gamma   xi      eta0    a   ddop    S_0     S_1
-    # 850.0  160.00  160.00  100.0   0.80    0.20    0.30    0.5
-    # 14.1287234403
-    # pesos Q,U: 186.499, 186.499
-    # Time: 0.5481 s
-    # ----------------------------------------------------
-    # Nfev.      Chi2_min    tol_Chi lambda   N      M
-    # ----------------------------------------------------
-    # 240    9.73e-04    1e-06   0   1120    8
-    # ----------------------------------------------------
-    #  B     gamm_g  xi_g    eta0    a   ddop    S_0     S_1
-    # 753.4  138.11  174.56  58.8    1.00    0.06    0.38    0.6
-    # 10.7   0.60    0.89    4.3     0.08    0.00    0.01    0.0
-
-
-    #----------------------------------------------------
-    #Element = SI1
-    #lambda0 = 10827.089
-    #ju=2.0, lu=1, su=1
-    #jl=2.0, ll=1, sl=1
-    #g_u  = 1.50
-    #g_l  = 1.50
-    #geff = 1.50
-    #----------------------------------------------------
-    #pesos V: 28.257
-    #pesos Q,U: 183.142, 183.142
-    #--------------------------------------------------------------------
-    #B       gamma   xi      vlos    eta0    a       ddop    S_0     S_1
-    #922.1    50.63   144.92  2.00    10.00   0.60    0.05    0.3     0.5
-    #Time: 0.2219 s
-    #----------------------------------------------------
-    #Nfev.    Chi2_min        tol_Chi lambda   N      M
-    #----------------------------------------------------
-    #174      5.75e-04        1e-06   0       1120    9
-    #--------------------------------------------------------------------
-    #B       gamm_g  xi_g    vlos    eta0    a       ddop    S_0     S_1
-    #724.4    45.88   175.15  -0.89   2.78    0.93    0.06    0.3     0.6
-    #1.0      57.30   57.30   1.00    1.00    1.00    1.00    1.0     1.0
-
-
-
-
-    ## Modulo Initial conditions:
-    #iB, igamma, ixi = initialConditions(y2,nlinea,x)
-    ## Array de valores iniciales
-    #p=[iB,igamma,ixi,eta0,a,ddop,S_0,S_1]
-    #p0.clear()
-    #p0.add('B',     value=p[0], min=100.0, max= 2000.)
-    #p0.add('gamma', value=p[1], min=0., max = pi)
-    #p0.add('xi',    value=p[2], min=0., max = pi)
-    #p0.add('eta0',  value=p[3], min=0.0, max = 200.)
-    #p0.add('a',     value=p[4], min=0.0, max = 1.5)
-    #p0.add('ddop',  value=p[5], min=0.0, max = 1.0)
-    #p0.add('S_0',   value=p[6], min=0.0)
-    #p0.add('S_1',   value=p[7], min=0.0)
