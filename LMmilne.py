@@ -34,7 +34,9 @@ def inversionStokes(p0, x, yc, param, Chitol, Maxifev, peso):
     n=len(yc); m=len(p0)
 
     # Levenberg-Marquardt
-    out = minimize(chi2, p0, args=(yc,), method='leastqr')#, ftol=Chitol, maxfev=Maxifev)
+    # out = minimize(chi2, p0, args=(yc,), method='leastqr', ftol=Chitol, maxfev=Maxifev)
+    out = minimize(chi2, p0, args=(yc,), method='leastqr', maxfev=Maxifev)
+
     # method='leastqr'
     # method='nelder'
     #print(fit_report(p0))
@@ -94,7 +96,7 @@ if __name__ == "__main__":
     # hdu = pf.open('/scratch/carlos/datos_gregor/17jun14.006-01ccmnfn.fits')
     # datos = hdu[0].data
     # y2 = datos[74,:,274,24:304]
-    y2 = load('stoke2.npy')
+    y2 = load('stoke3.npy')
     #y2 = datos[87,:,184,24:304]
     #y2 = datos[59,:,430,24:304]
     x = arange(-2.8,2.8,20e-3)

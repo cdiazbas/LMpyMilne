@@ -1,7 +1,7 @@
 ﻿# Author: cdiazbas@iac.es
 # Code: Milne Utilities
 
-from numpy import arange, pi, sqrt, array, ones, imag, real, sign, sin, cos
+from numpy import arange, pi, sqrt, array, ones, imag, real, sign, sin, cos, arctan2, sum
 from math import acos, atan
 # from zeeman import extrae, g, geff
 
@@ -192,13 +192,12 @@ def initialConditions(stokes,lineaToFind,x,param):
 
 	[ju,lu,su,jl,ll,sl,elem,l0,gu,gl,gg] = param[2]
 	CB = 4.67E-13
-	Bv = -1./(CB*gg*l0**2.)*(sum(V0*I1)/sum(I1**2.))
-	#print(Bv)
-	Bh2 = 4./(CB**2.*gg*l0**4.)*sqrt(sum(Q0*I2)**2.+sum(U0*I2)**2.)/sum(I2**2.)
+	CC = CB*gg*l0**2.
+	Bv = -1./(CC)*(sum(V0*I1)/sum(I1**2.))
+	Bh2 = 4./(CC**2.)*sqrt(sum(Q0*I2)**2.+sum(U0*I2)**2.)/sum(I2**2.)
 	Bh = sqrt(Bh2)
 	Bm = sqrt(Bv**2. + Bh**2.)
-	gammaB = acos(Bv/Bm)
-	xiB = 0.5*atan(sum(U0*I2)/sum(Q0*I2))
-
-	return Bm, gammaB, xiB
+	thetaB = acos(Bv/Bm)
+	phiB = 0.5*arctan2(sum(U0), sum(Q0))
+	return Bm, thetaB, phiB
 
