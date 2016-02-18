@@ -141,12 +141,12 @@ if __name__ == "__main__":
     p0.add('B',     value=p[0], min=50.0, max= 2000.)
     p0.add('gamma', value=p[1], min=0., max = pi)
     p0.add('xi',    value=p[2], min=0., max = pi)
-    p0.add('vlos',  value=p[3], min=-20., max =+20.)
-    p0.add('eta0',  value=p[4], min=0., max = 6.)
-    p0.add('a',     value=p[5], min=0., max = 5.0)
-    p0.add('ddop',  value=p[6], min=0.0, max = 0.5)
+    p0.add('vlos',  value=p[3], min=-5., max =+5.)
+    p0.add('eta0',  value=p[4], min=0., max = 12.)
+    p0.add('a',     value=p[5], min=0., max =0.8)
+    p0.add('ddop',  value=p[6], min=0.0, max = 0.1)
     p0.add('S_0',   value=p[7], min=0.0,  max = 1.5)
-    p0.add('S_1',   value=p[8], min=0.0,  max = 1.5)
+    p0.add('S_1',   value=p[8], min=0.0,  max = 0.7)
     
 
     
