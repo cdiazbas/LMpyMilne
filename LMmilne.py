@@ -35,7 +35,7 @@ def inversionStokes(p0, x, yc, param, Chitol, Maxifev, peso):
     # m = len(p0)
 
     # out = minimize(chi2, p0, args=(yc,), method='leastqr', ftol=Chitol, maxfev=Maxifev)
-    out = minimize(chi2, p0, args=(yc,), method='leastqr', maxfev=Maxifev)
+    out = minimize(chi2, p0, args=(yc,), method='leastsq')#, maxfev=Maxifev)
 
     # method='leastqr'
     # method='nelder'
