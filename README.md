@@ -1,5 +1,5 @@
 ﻿# LMpyMilne
-LMpyMilne: LMfit Inversion in a Milne-Eddignton atmosphere (in python)
+LMpyMilne: LMfit Inversion in a Milne-Eddington atmosphere (in python)
 
 ## Content
 
