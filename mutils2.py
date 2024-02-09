@@ -141,11 +141,11 @@ def extrae(fichero, lineaToFind):
     return [ju, lu, su, jl, ll, sl, elem, l0, datos]
 
 
-def paramLine(nlinea):
+def paramLine(nlinea,linefile='LINEAS.txt'):
 
     # Calculating the Zeeman Pattern
     lineaToFind = nlinea
-    ju, lu, su, jl, ll, sl, elem, l0, datos = extrae('LINEAS.txt', lineaToFind)
+    ju, lu, su, jl, ll, sl, elem, l0, datos = extrae(linefile, lineaToFind)
     [dpi, dsr, dsb], [spi, ssr, ssb] = pattern(ju, lu, su, jl, ll, sl)
 
     # Some useful information
